@@ -1,0 +1,78 @@
+.main-container {
+    margin: 3rem 0rem;
+}
+.course-items-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-items {
+    height: 12rem;
+    width: 13rem;
+    border-radius: 0.5rem;
+}
+
+.course-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.html-image {
+    height: 7rem;
+    width: 100%;
+    border-radius: 0.3rem 0.3rem 0rem 0rem;
+}
+
+.course-content {
+    padding: 0.5rem 0.3rem;
+    background-color: var(--main-color);
+}
+
+.another-container {
+    margin-bottom: 1.3rem;
+}
+
+.btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+}
+
+.enrol-now {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    border: 0rem;
+    color: black;
+    font-size: 0.75rem;
+    font-weight: 1000;
+    background-color: var(--main-theme);
+}
+
+.enrol-now:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.card-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.display-course-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-three {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.2rem;
+}

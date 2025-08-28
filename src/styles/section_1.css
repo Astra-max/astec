@@ -1,0 +1,220 @@
+:root {
+    --main-color: rgb(245, 248, 220);
+    --main-theme:  rgb(7, 201, 185);
+}
+
+@-webkit-keyframes tracking-in-contract-bck-bottom {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(300px);
+            transform: translateZ(400px) translateY(300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-contract-bck-bottom {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(300px);
+            transform: translateZ(400px) translateY(300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+.one-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.2rem;
+    margin: 3.8rem 0rem;
+}
+
+.our-success {
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+.suc-note {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.one-item {
+    box-shadow: 0rem 0rem 0.2rem grey;
+    width: 14rem;
+    height: 6rem;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    -webkit-animation: tracking-in-contract-bck-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract-bck-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.numbers {
+    color: var(--main-theme);
+    font-weight: bold;
+}
+
+.color-me {
+    width: 4rem;
+    margin-bottom: 0rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.color-me2 {
+    width: 3rem;
+    margin-left: 10rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.color-me3 {
+    width: 3rem;
+    margin-left: 10rem;
+    margin-bottom: 0rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.color-me4 {
+    width: 3rem;
+    margin-left: 10.2rem;
+    margin-bottom: 0rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0rem;
+    overflow: hidden;
+}
+
+.icon {
+    font-size: 1.6rem;
+}
+
+.description:hover {
+    color: black;
+}
+
+.sidebar-container {
+    background-color: var(--main-color);
+}
+
+.side-element {
+    border-right: 0.3rem rgb(124, 123, 123) solid;
+    height: 43rem;
+    width: 21rem;
+    margin-left: 0.3rem;
+    margin-top: 3rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 9rem;
+    margin: 1rem 1rem;
+    font-weight: 500;
+}
+
+.select {
+    font-weight: 500;
+    font-size: medium;
+}
+
+.select-course {
+    filter: blur(0.01rem);
+    width: 17rem;
+    border: none;
+    height: 2.7rem;
+}
+
+.select-course:focus {
+    border: none;
+}
+
+.check-course {
+    height: 7rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+    padding-left: 0.8rem;
+    padding-top: 2.2rem;
+}
+
+.checkboxes label span {
+    padding-left: 0.5rem;
+}
+
+.display-certif {
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
+   
+}
+
+.display-btn {
+    background-color: var(--main-theme);
+    width: 100%;
+    font-weight: 600;
+    height: 2.5rem;
+    margin-right: 0.4rem;
+    border-radius: 0.3rem;
+    border: 0rem;
+    background-color: var(--main-theme);
+}
+
+
+
+.one-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: top;
+    color: black;
+    transition: transform 1s ease;
+}
+
+
+.one-item:hover::after {
+    transform: scaleX(1);
+    color: black;
+}

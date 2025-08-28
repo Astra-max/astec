@@ -1,0 +1,207 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navBar {
+  background-color: transparent;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  gap: 18rem;
+  top: 0rem;
+  z-index: 1;
+  position: fixed;
+  align-items: center;
+  padding: 0rem 2rem;
+  box-shadow: 0rem 0.15rem 0.2rem grey;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.navBar ul {
+  display: flex;
+  align-items: center;
+  gap: 2.7rem;
+  list-style: none;
+}
+
+.links {
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.links:hover {
+  border-bottom: 0.15rem var(--main-theme) solid;  
+}
+
+.last-nav {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.user-account {
+  height: 8rem;
+  width: 12rem;
+  cursor: pointer;
+  position: absolute;
+}
+
+.login-cont {
+  display: flex;
+  align-items: center;
+}
+
+.my-account {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-top: 3rem;
+  gap: 0.2rem;
+}
+
+.acc-logo {
+  background-color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.userName {
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.bell {
+  position: absolute;
+  -webkit-animation: wobble-hor-top 0.8s both infinite;
+	        animation: wobble-hor-top 0.8s both infinite;
+}
+
+.bell-alert {
+  margin-bottom: 0.5rem;
+}
+
+.alert-div {
+  padding-bottom: 0rem;
+  position: relative;
+  color: #fff;
+  display: flex;
+}
+
+.alerts {
+  background-color: red;
+  text-align: center;
+  width: 1.6rem;
+  height: 1.3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding-top: 0.2rem;
+  border-radius: 50%;
+}
+
+.login-profile {
+  display: flex;
+  gap: 1rem;
+}
+
+@-webkit-keyframes wobble-hor-top {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(6deg);
+            transform: translateX(-30px) rotate(6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(-6deg);
+            transform: translateX(15px) rotate(-6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(3.6deg);
+            transform: translateX(-15px) rotate(3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(-2.4deg);
+            transform: translateX(9px) rotate(-2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(1.2deg);
+            transform: translateX(-6px) rotate(1.2deg);
+  }
+}
+@keyframes wobble-hor-top {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(6deg);
+            transform: translateX(-30px) rotate(6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(-6deg);
+            transform: translateX(15px) rotate(-6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(3.6deg);
+            transform: translateX(-15px) rotate(3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(-2.4deg);
+            transform: translateX(9px) rotate(-2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(1.2deg);
+            transform: translateX(-6px) rotate(1.2deg);
+  }
+}
+
+.account-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  background-color: #fff;
+  width: 9rem;
+  gap: 0.4rem;
+}
