@@ -1,132 +1,121 @@
-import { faBook, faF, faG, faLock } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../styles/login.css'
-import { useState } from 'react'
-import LoginUser from '../lib/postDetails'
-import SignUp from './singUp'
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook, faLock, faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { faFacebookF, faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-const Login = ({ setToken }) => {
-  const [email, setEmail] = useState('')
-  const [passwd, setPassword] = useState('')
-  const [dbMessage, setDbMessage] = useState('')
-  const [isSignUp, setIsSignUp] = useState(false)
-  const [loading, setLoading] = useState(false)
+import "../styles/login.css";
+import { loginUser } from "../store/authSlice";
+import SignUp from "../auth/singUp";
 
+const Login = () => {
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.auth);
 
-  async function HandleSubmit(e) {
-    e.preventDefault()
-    setLoading(true)
-    setDbMessage('')
-    try {
-      const res = await LoginUser({ email, passwd }, 'login')
-    
-      if (res.errMessage) {
-        setDbMessage(res.errMessage)
-        setLoading(false)
-        return
-      }
-      await setToken(res)
-      window.location.href = '/'
+  const [email, setEmail] = useState("");
+  const [passwd, setPassword] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [toggle, setToggle] = useState({isToggled: false})
 
-    } catch (error) {
-      setDbMessage("Server error, please try again later")
-      console.error(error)
-    } finally {
-      setLoading(false)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!email || !passwd) {
+      alert("Both fields are required!");
+      return;
     }
-  }
 
-  function HandleEmail(e) {
-    setEmail(e.target.value) 
-  }
-  function HandlePassword(e) {
-    const val = e.target.value
-    setPassword(val)
-  }
+    dispatch(loginUser({ email, passwd }));
+  };
 
-  const passInput = {
-    position: 'fixed',
-    left: '536',
-    paddingTop: '0.5rem',
-    opacity: '0.7'
-  }
+  const passInputStyle = {
+    position: "absolute",
+    marginLeft: "0.5rem",
+    marginTop: "0.7rem",
+    opacity: "0.7",
+  };
 
   return (
-    <div className='login-container'>
+    <div className="login-container">
       {!isSignUp ? (
         <div className="minor-cont">
-          <div className='descrip-logo'>
-            <h2 className='descr-logo'>AsTec Academy</h2>
+          <div className="descrip-logo">
+            <h2 className="descr-logo">AsTec Academy</h2>
           </div>
           <div className="central-area">
-            <p className='big-welcome'>Welcome Back</p>
+            <p className="big-welcome">Welcome Back</p>
             <p className="welcome-more">Please enter your details</p>
-            <div className='login-sign'>
-              <button type="button" className='btn login'>Login</button>
+            <div className="login-sign">
+              <button type="button" className="btn login">
+                Login
+              </button>
               <button
                 type="button"
-                className='btn signin'
+                className="btn signin"
                 onClick={() => setIsSignUp(true)}
               >
                 SignUp
               </button>
             </div>
-            <form className='info-sect' onSubmit={HandleSubmit}>
-              <span>
-                <FontAwesomeIcon icon={faBook} style={passInput}/>
+            <form className="info-sect" onSubmit={handleSubmit}>
+              <span className="input-wrapper">
+                <FontAwesomeIcon icon={faBook} style={passInputStyle} />
                 <input
-                className='input'
-                type='email'
-                placeholder='johndoe@gmail.com'
-                value={email}
-                onChange={HandleEmail}
-                required
-              />
+                  className="input"
+                  type="email"
+                  placeholder="johndoe@gmail.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </span>
-              <span>
-                {<FontAwesomeIcon icon={faLock} style={passInput}/>}
+              <span className="input-wrapper">
+                <FontAwesomeIcon icon={toggle.isToggled?faLock:faUnlock} style={passInputStyle} onClick={()=>setToggle(tg=>({...tg,isToggled: !tg.isToggled}))}/>
                 <input
-                className='input'
-                type='text'
-                placeholder='*********'
-                value={passwd}
-                onChange={HandlePassword}
-                required
-              />
+                  className="input"
+                  type={!toggle.isToggled?"password":"text"}
+                  placeholder="*********"
+                  value={passwd}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
               </span>
-              {dbMessage && <p style={{ color: "red" }}>{dbMessage}</p>}
-              <button className='continue' type='submit' disabled={loading}>
+              {error && <p style={{ color: "red" }}>{error}</p>}
+              <button className="continue" type="submit" disabled={loading}>
                 {loading ? "Loading..." : "Continue"}
               </button>
             </form>
           </div>
-          <div className='or'>
-            <span className='or-span'>or</span>
+          <div className="or">
+            <span className="or-span">or</span>
           </div>
           <div className="social-login">
-            <span className='spans'><FontAwesomeIcon icon={faF} color='blue' /></span>
-            <span className='spans'><FontAwesomeIcon icon={faG} color='black' /></span>
-            <span className='spans'><FontAwesomeIcon icon={faG} color='gold' /></span>
+            <span className="spans">
+              <FontAwesomeIcon icon={faFacebookF} color="blue" />
+            </span>
+            <span className="spans">
+              <FontAwesomeIcon icon={faGoogle} color="black" />
+            </span>
+            <span className="spans">
+              <FontAwesomeIcon icon={faGithub} color="gold" />
+            </span>
           </div>
           <div className="motivationals">
             <p>
-              Join millions of like-minded learners who are eager to learn new skills.
-              Login to success!
+              Join millions of like-minded learners who are eager to learn new skills. Login to
+              success!
             </p>
           </div>
         </div>
       ) : (
-        <SignUp
-          onSwitch={() => setIsSignUp(false)}
-          setToken={setToken}
-        />
+        <SignUp onSwitch={() => setIsSignUp(false)} />
       )}
 
-      <div className='minor-cont2'>
-        <img src='body_1.jpg' alt='login-pic' />
+      <div className="minor-cont2">
+        <img src="body_1.jpg" alt="login-pic" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

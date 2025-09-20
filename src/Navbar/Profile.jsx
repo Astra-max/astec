@@ -1,21 +1,23 @@
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import "../styles/index.css";
+import { logout } from "../store/authSlice";
+
 
 export default function Profile() {
   const [open, setOpen] = useState(false);
-  const userName = useSelector((state) => state.userName);
-
-  const HandleLogout = () => {
-    localStorage.clear();
-    window.location.href = "/login";
-  };
+  const {userName} = useSelector((state) => state.auth);
+  const dispatch = useDispatch()
 
   const HandleDisplay = () => {
     setOpen(prev => !prev);
   };
+  function HandleLogout() {
+    dispatch(logout())
+    window.location.href = '/'
+  }
 
   return (
     <div className="user-account">
@@ -36,4 +38,3 @@ export default function Profile() {
     </div>
   );
 }
-

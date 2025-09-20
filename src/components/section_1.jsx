@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/section_1.css";
 import { useState } from "react";
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
-import { faFilterCircleDollar } from "@fortawesome/free-solid-svg-icons/faFilterCircleDollar";
 
 export default function SectionOne() {
   return (
@@ -67,8 +66,9 @@ export function SmallSideBar() {
   }
 
 
-  function handlesCheckboxChange() {
-    setIsChecked(!isChecked);
+  function handlesCheckboxChange(e) {
+    const res = window.confirm(`You are about to register \n${e.target.value}`)
+    if (res) setIsChecked(!isChecked);
   }
 
 
@@ -79,15 +79,16 @@ export function SmallSideBar() {
           <div className="check-course">
             <p className="select">Select and enroll courses</p>
             <div className="search">
-              <p>Filter By <FontAwesomeIcon icon={faFilterCircleDollar}/>:</p>
-              <select className="select-course" placeholder="select study program....">
-                <option>click to select study program ....</option>
+              <p>Filter By :</p>
+              <select className="select-course" placeholder="select course category">
+                <option>select and enroll course category</option>
                 <option>Software engineering and Design</option>
                 <option>Machine Learning/Ai</option>
                 <option>Cloud Computing (AWS)</option>
                 <option>Database Administration</option>
                 <option>Cyber Security (CEH)</option>
                 <option>Systems programming (IoT - Rust)</option>
+                <option>Data structure and algorithms</option>
               </select>
             </div>
           </div>
@@ -95,14 +96,15 @@ export function SmallSideBar() {
             <label>
               <input
                 type="checkbox"
+                value="Basic Hyper-text markup"
                 checked={isChecked}
-                onChange={handlesCheckboxChange}
+                onChange={(e)=>handlesCheckboxChange(e)}
               />
-              <span>Basic Html</span>
+              <span>Basic Hyper-text markup</span>
             </label>
             <label>
               <input type="checkbox" />
-              <span>styling with Css</span>
+              <span>web styling basic css tricks</span>
             </label>
             <label>
               <input type="checkbox" />
@@ -118,27 +120,27 @@ export function SmallSideBar() {
             </label>
             <label>
               <input type="checkbox" />
-              <span>version control Git</span>
+              <span>Version control Git and GitHub</span>
             </label>
             <label>
               <input type="checkbox" />
-              <span>Backend dev NodeJS</span>
+              <span>Master backend dev with NodeJS</span>
             </label>
             <label>
               <input type="checkbox" />
-              <span>Backend dev Django</span>
+              <span>Backend development Django (python)</span>
             </label>
             <label>
               <input type="checkbox" />
-              <span>master Express Js</span>
+              <span>Master Express Js for seniors</span>
             </label>
             <label>
               <input type="checkbox" />
-              <span>mastery of MongoDB</span>
+              <span>Master data persistance (MongoDB)</span>
             </label>
             <label>
               <input type="checkbox" />
-              <span>Basics of Rest API</span>
+              <span>Data sharing and transfer (Rest API)</span>
             </label>
             <label>
               <input type="checkbox" />
@@ -146,11 +148,11 @@ export function SmallSideBar() {
             </label>
             <label>
               <input type="checkbox" />
-              <span>Basics of NextJS</span>
+              <span>Master NextJS advanced react</span>
             </label>
             <label>
               <input type="checkbox" />
-              <span>programming Typescript</span>
+              <span>programming safely with Typescript</span>
             </label>
             <div className="certificate">
               <div className="display-certif">

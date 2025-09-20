@@ -1,0 +1,255 @@
+.side-panel-main {
+    background-color: var(--main-color);
+    width: 16rem;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    opacity: 0.7;
+}
+
+.dash-astec {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--main-theme);
+}
+
+.dash-aa {
+    color: black;
+    font-size: 1.25rem;
+}
+
+.menu {
+    padding-top: 2rem;
+}
+
+.menu-ptag {
+    padding-left: 0.3rem;
+}
+
+.menu-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 1rem;
+}
+
+.menu-elements-p {
+    cursor: pointer;
+}
+
+.general-settings {
+    margin-top: 3rem;
+}
+
+.settings-ptag {
+    padding-left: 0.3rem;
+}
+
+.gen-settings {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.gen-settings-p {
+    cursor: pointer;
+}
+
+.profile-cont {
+    background-color: var(--main-color);
+    border-radius: 1rem;
+    width: 67rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9rem;
+}
+
+.account-container {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-right: 1rem;
+}
+
+.search-bar {
+    border-radius: 2rem;
+    border: 0rem;
+    width: 19rem;
+    padding-left: 0.7rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+}
+
+.notification-bell {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pic {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: peru;
+    color: black;
+    border-radius: 50%;
+    border: 0rem;
+    display: flex;
+    font-size: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.email {
+    font-size: 0.85rem;
+}
+
+.userName {
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.dash-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.display-dash {
+    display: flex;
+    gap: 0.4rem;
+    margin: 0.5rem 0rem;
+}
+
+.nest-middle-dsplay {
+    background-color: var(--main-color);
+    border-radius: 0.5rem;
+    margin: 0.5rem 0.1rem;
+    height: 100vh;
+}
+
+.dash-enroll {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: inherit;
+    height: 4rem;
+    margin: 0rem 1rem;
+}
+
+.dash-enroll > p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.dash-btn {
+    height: 2.1rem;
+    border-radius: 1rem;
+    border: 0rem;
+    cursor: pointer;
+}
+
+.add-course {
+    display: flex;
+    align-items: center;
+    font-size: small;
+    gap: 1rem;
+}
+
+.add-course-btn {
+    width: 7rem;
+    color: #fff;
+    background-color: var(--main-theme);
+}
+
+.goto-wk {
+    width: 8rem;
+    border: 0.1rem solid black;
+    background-color: #fff;
+}
+
+.progress-card {
+    display: flex;
+    align-items: center;
+    margin: 0rem 1rem;
+    gap: 1rem;
+}
+
+.progress-info {
+   margin: 0rem 1rem;
+   margin-bottom: 1rem;
+   color: red;
+}
+
+.card {
+    font-size: smaller;
+    height: 7rem;
+    width: 13rem;
+    border-radius: 1rem;
+    border: 0rem;
+    background-color: #fff;
+}
+
+.card span {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.card p {
+    padding-left: 1rem;
+}
+
+.dash-progress {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-p {
+    padding-top: 1rem;
+}
+
+.total-course {
+    background-color: var(--main-theme);
+    color: #fff;
+}
+
+.item-num {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.progress-icon {
+    position: absolute;
+    padding-top: 1.1rem;
+    padding-left: 11rem;
+}
+
+.lower-span {
+    opacity: 0.5;
+    padding-top: 1rem;
+    color: var(--main-theme);
+}
+
+.lower-span .ptags {
+    font-size: 0.8rem;
+    padding-left: 2.5rem;
+}
+
+.lower-ptag {
+    color: black;
+}
+

@@ -26,6 +26,7 @@ thead {
 table th, table td {
   padding: 0.6rem;
   border-bottom: 1px solid #ddd;
+  border-radius: 0.2rem;
 }
 
 thead tr {
@@ -36,13 +37,6 @@ height: 2rem;
 
 table tbody tr:hover {
   background-color: #fafafa;
-}
-
-.mandatory-btn {
-    background-color: var(--main-color);
-    font-size: small;
-    color: red;
-    cursor: pointer;
 }
 
 .mandatory {
@@ -70,18 +64,9 @@ table tbody tr:hover {
     border-radius: 0.2rem;   
 }
 
-.registed {
-    background-color: var(--main-theme);
-}
-
-.missed {
-    background-color: red;
-    color: #fff;
-}
-
 .act-btn {
     border: 0rem;
-    width: 6rem;
+    width: 10rem;
     height: 2rem;
     cursor: pointer;
     border-radius: 0.3rem;
@@ -96,14 +81,17 @@ table tbody tr:hover {
 }
 
 .venue {
-    background-color: black;
-    color: #fff;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 0.5rem;
 }
 
 .urgency {
-    background-color: var(--main-theme);
+    height: 2rem;
+    border-radius: 0.5rem;
 }
 
 .act-type {
-    background-color: orange;
+    height: 2rem;
+    border-radius: 0.5rem;
 }

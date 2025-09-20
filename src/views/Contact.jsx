@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/contact.css";
-import { faL, faMailBulk, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faAddressBook, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
   return (
@@ -10,7 +11,7 @@ const Contact = () => {
           <div className="inner-container">
             <div className="contact-main">
               <div className="contact-icon">
-                <FontAwesomeIcon className="icon" icon={faPhoneAlt} size="2x" />
+                <FontAwesomeIcon className="f-icon" icon={faPhoneAlt} />
               </div>
               <div className="contact-descr">
                 <p className="more-descr">AsTec Academy</p>
@@ -25,12 +26,12 @@ const Contact = () => {
                 <p>+254796066170</p>
               </div>
                <div className="contact-icon">
-                <FontAwesomeIcon className="icon" icon={faPhoneAlt} size="2x" />
+                <FontAwesomeIcon className="f-icon" icon={faWhatsapp} style={{color: 'green'}}/>
               </div>
             </div>
             <div className="contact-main">
               <div className="contact-icon">
-                <FontAwesomeIcon className="icon" icon={faMailBulk} size="2x" />
+                <FontAwesomeIcon className="f-icon" icon={faAddressBook} />
               </div>
               <div className="contact-descr">
                 <p className="more-descr">AsTec Academy</p>
@@ -45,7 +46,7 @@ const Contact = () => {
                 <p style={{color: 'blue'}}>Astec Academy</p>
               </div>
               <div className="contact-icon">
-                <FontAwesomeIcon className="icon" icon={faL} size="2x" />
+                <FontAwesomeIcon className="f-icon" icon={faLinkedinIn} style={{color: 'blue'}}/>
               </div>
             </div>
           </div>

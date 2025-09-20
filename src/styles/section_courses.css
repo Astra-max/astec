@@ -1,15 +1,7 @@
-.main-container {
-    margin: 3rem 0rem;
-}
-.course-items-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .course-items {
     height: 12rem;
     width: 13rem;
+    margin-bottom: 3.2rem;
     border-radius: 0.5rem;
 }
 
@@ -60,19 +52,18 @@
     cursor: pointer;
 }
 
+.card-section {
+    display: flex;
+    align-items: self-start;
+    justify-content: center;
+    height: 44rem;
+    margin-top: 9rem;
+    width: 100%;
+    gap: 2rem;
+}
+
 .card-display {
     display: flex;
-    align-items: flex-start;
-    gap: 2.5rem;
-}
-
-.display-course-block {
-    display: flex;
-    flex-direction: column;
-}
-
-.first-three {
-    display: flex;
-    align-items: flex-start;
-    gap: 2.2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
 }

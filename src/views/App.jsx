@@ -4,34 +4,46 @@ import Activity from "./Activity";
 import Contact from "./Contact";
 import NoPage from "./NoPage";
 import Chat from "../components/chat";
-import DashboardUI from "./Dashboard";
+import Dashboard from "./Dashboard";
 import Layout from "../components/layout";
-
+import WorkSpace from "../workspace/workspace";
+import { useSelector } from "react-redux";
+import Login from "../auth/login";
 
 export default function App() {
+  const {token} = useSelector((state)=>state.auth)
   return (
     <Router>
-        <Routes>
-          <Route path="/" element={
+      <Routes>
+        <Route
+          path="/"
+          element={
             <Layout>
               <Home />
             </Layout>
-            } />
-          <Route path="/activity" element={
+          }
+        />
+        <Route
+          path="/activity"
+          element={
             <Layout>
               <Activity />
             </Layout>
-            } />
-          <Route path="/contact" element={
+          }
+        />
+        <Route
+          path="/contact"
+          element={
             <Layout>
               <Contact />
             </Layout>
-            } />
-          <Route path="/dashboard" element={<DashboardUI />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/work_station" element={<h2>My work station</h2>} />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
+          }
+        />
+        <Route path="/dashboard" element={token?<Dashboard />:<Login />} />
+        <Route path="/chat" element={token?<Chat />:<Login />} />
+        <Route path="/work_station" element={token?<WorkSpace/>:<Login/>} />
+        <Route path="*" element={token?<NoPage />:<Login />} />
+      </Routes>
     </Router>
   );
 }

@@ -3,11 +3,11 @@ import Footer from "./footerone";
 import SectionOne from "./section_1";
 import Card from "./secction_courses";
 import Login from "../auth/login";
-import useToken from "../lib/useToken";
+import { useSelector } from "react-redux";
 
 export default function Layout({children}) {
-    const {token, setToken} = useToken()
-    if (!token) return <Login setToken={setToken} />
+    const {token} = useSelector((state)=>state.auth)
+    if (!token) return <Login />
     return (
         <>
           <Navbar />

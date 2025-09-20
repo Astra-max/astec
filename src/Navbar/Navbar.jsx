@@ -4,16 +4,11 @@ import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { Outlet, Link } from "react-router-dom";
 import "../styles/home.css";
 import Profile from "./Profile";
+import { useSelector } from "react-redux";
 //import { GoogleOAuthProvider } from '@react-oauth/google'
 
 const Navbar = () => {
-  function getToken() {
-    const tokenStr = localStorage.getItem('token')
-    const userToken = JSON.parse(tokenStr)
-    return userToken?.token
-  }
-
-  const token = getToken()
+  const { token } = useSelector((state)=>state.auth)
   
   return (
     <>
