@@ -1,6 +1,6 @@
-const pool = require("../../model/usersDB");
+import pool from "../../config/dbConnect.js";
 
-exports.getAllActivities = async (req, res) => {
+export const getAllActivities = async (req, res) => {
   try {
     const data = await pool.query(
       "SELECT id, name, activity_type, time ,venue, option FROM activities WHERE time > '2025-06-30' ORDER BY time ASC"
@@ -12,7 +12,7 @@ exports.getAllActivities = async (req, res) => {
   }
 };
 
-exports.registerActivity = async (req, res) => {
+export const registerActivity = async (req, res) => {
   console.log(req.body);
   console.log(req.params);
   const id = req.params.id;

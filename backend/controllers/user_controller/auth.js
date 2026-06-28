@@ -1,23 +1,21 @@
-const pool = require("../../model/usersDB");
-const jwt = require("jsonwebtoken");
-const env = require("dotenv");
-const bcrypt = require("bcrypt");
-
+import pool from "../../config/dbConnect.js";
+import jwt from "jsonwebtoken";
+import env from "dotenv";
+import bcrypt from "bcrypt";
+import { getUserById } from "../../repository/queries.js"
 
 env.config();
 
-
-exports.userLogin = async (req, res) => {
+export const userLogin = async (req, res) => {
   try {
     // modified email & passwd for jsparrow check later
     const { emailAddr, password } = req.body;
-   // console.log(req.body)
     if (!emailAddr || !password) {
       return res.json({ invalid: "Missing email or password" });
     }
 
     const userExists = await pool.query(
-      "SELECT id, firstname, secondname, email, role, password FROM users WHERE email=$1",
+     getUserById,
       [emailAddr]
     );
 
@@ -62,7 +60,7 @@ exports.userLogin = async (req, res) => {
   }
 };
 
-exports.refreshToken = async (req, res) => {
+export const refreshToken = async (req, res) => {
   const { refreshToken } = req.body;
 
   if (!refreshToken) return res.status(401);
@@ -81,7 +79,7 @@ exports.refreshToken = async (req, res) => {
   });
 };
 
-exports.userSignUp = async (req, res) => {
+export const userSignUp = async (req, res) => {
   const { firstName, secondName, email, passwd, role } = req.body;
 
   if (!firstName || !secondName || !email || !passwd || !role) {
@@ -108,7 +106,7 @@ exports.userSignUp = async (req, res) => {
   }
 };
 
-exports.userForgotPass = async (req, res) => {
+export const userForgotPass = async (req, res) => {
   const { email, password, confirm } = req.body;
 
   if (!email || !password) return res.json({ message: "missing credentials" });

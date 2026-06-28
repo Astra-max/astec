@@ -1,6 +1,6 @@
-const pool = require("../../model/usersDB")
+import pool from "../../config/dbConnect.js";
 
-exports.addUser = async (req, res) => {
+export const addUser = async (req, res) => {
     const {firstName,secondName, emailAddr, passWord} = req.body
     const ifExist = await pool.query(`SELECT email FROM users WHERE email=$1`,[emailAddr])
 
@@ -18,7 +18,7 @@ exports.addUser = async (req, res) => {
     }
 }
 
-exports.removeUser = async (req, res) => {
+export const removeUser = async (req, res) => {
     const userId = parseInt(req.param.id)
     try {
         const removedUser = await pool.query(`DELETE FROM users WHERE id=$1`, [userId])
@@ -28,7 +28,7 @@ exports.removeUser = async (req, res) => {
     }
 }
 
-exports.getSingleUser = async (req, res) => {
+export const getSingleUser = async (req, res) => {
     const userId = +req.params.id
     try {
         const singleUser = await pool.query('SELECT firstname,secondname,email FROM users WHERE id=$1',[userId])

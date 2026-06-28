@@ -1,11 +1,13 @@
-const jwt = require("jsonwebtoken");
-const env = require("dotenv");
+import jwt from "jsonwebtoken";
+import env from "dotenv";
+
+
 env.config();
 
 /**
  * Handles verify token
  */
-function verifyToken(req, res, next) {
+export function verifyToken(req, res, next) {
   try {
     // Get token from HttpOnly cookie
     //const token = req.cookies.authToken;
@@ -35,7 +37,7 @@ function verifyToken(req, res, next) {
 /**
  * Handles authorized role
  */
-const authorizedRole = (...allowedRoles) => {
+export const authorizedRole = (...allowedRoles) => {
   return (req, res, next) => {
     if (!allowedRoles.includes(req.user.role)) {
       return res.json({ accessDenied: "unauthorized access", status: 403 });
@@ -44,4 +46,3 @@ const authorizedRole = (...allowedRoles) => {
   };
 };
 
-module.exports = { verifyToken, authorizedRole };

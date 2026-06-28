@@ -1,6 +1,6 @@
-const pool = require('../../model/usersDB')
+import pool from "../../config/dbConnect.js";
 
-exports.getUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
   try {
     const result = await pool.query("SELECT id, firstname, secondname, email FROM users LIMIT 7");
     return res.json({ users: result.rows });
@@ -10,7 +10,7 @@ exports.getUsers = async (req, res) => {
   }
 };
 
-exports.singleUser = async (req, res) => {
+export const singleUser = async (req, res) => {
   const {id} = req.params
   const userId = parseInt(id)
   console.log(userId)
@@ -31,7 +31,7 @@ exports.singleUser = async (req, res) => {
   }
 }
 
-exports.deleteUser = async (req, res) => {
+export const deleteUser = async (req, res) => {
   const { id } = req.params;
 
   if (!id) return res.status(400).json({ message: "id not provided" });

@@ -1,9 +1,9 @@
-const express = require('express')
-const cors = require('cors');
-const env = require('dotenv')
-const cookieparser = require('cookie-parser');
-const router = require('./routes/apiRoutes');
-const handleLogs = require('./logger/logs');
+import express from "express";
+import cors from "cors";
+import env from "dotenv";
+import cookieparser from "cookie-parser";
+import router from "./routes/apiRoutes.js";
+import handleLogs from "./logger/logs.js";
 
 env.config()
 

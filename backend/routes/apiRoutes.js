@@ -1,21 +1,21 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   getAllActivities,
   registerActivity,
-} = require("../controllers/user_controller/activities");
-const { getSingleUser } = require("../controllers/user_controller/user");
-const {
+} from "../controllers/user_controller/activities.js";
+import { getSingleUser } from"../controllers/user_controller/user.js";
+import {
   userLogin,
   userSignUp,
   refreshToken,
   userForgotPass,
-} = require("../controllers/user_controller/auth");
-const { verifyToken, authorizedRole } = require("../middleware/auth");
-const {
+} from "../controllers/user_controller/auth.js";
+import { verifyToken, authorizedRole } from "../middleware/auth.js";
+import {
   registerCourse,
   getCourses,
-} = require("../controllers/user_controller/courses");
-const { deleteUser, getUsers, singleUser } = require("../controllers/user_controller/admin");
+} from"../controllers/user_controller/courses.js";
+import { deleteUser, getUsers, singleUser } from "../controllers/user_controller/admin.js";
 
 const router = express.Router();
 
@@ -39,5 +39,4 @@ router.delete("/api/admin/dashboard/user/:id", verifyToken, authorizedRole("admi
 //router.delete("/api/admin/dashboard/user/:id", verifyToken, authorizedRole("admin"), deleteUser);
 
 
-
-module.exports = router;
+export default router;

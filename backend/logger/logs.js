@@ -8,7 +8,7 @@ function addZero(time) {
 /**
  * Handles handle logs
  */
-function handleLogs(req, res, next) {
+export default function handleLogs(req, res, next) {
   const time = new Date();
   let hours = time.getHours();
   const meridian = hours >= 12 ? "PM" : "AM";
@@ -20,4 +20,3 @@ function handleLogs(req, res, next) {
   next();
 }
 
-module.exports = handleLogs;

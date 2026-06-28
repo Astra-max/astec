@@ -1,6 +1,6 @@
-const pool = require("../../model/usersDB");
+import pool from "../../config/dbConnect.js";
 
-exports.registerCourse = async (req, res) => {
+export const registerCourse = async (req, res) => {
   const { course, courseId, userId } = req.body;
   const { id } = req.params;
   const initialCourseStatus = "start learning";
@@ -30,7 +30,7 @@ exports.registerCourse = async (req, res) => {
   }
 };
 
-exports.getCourses = async (req, res) => {
+export const getCourses = async (req, res) => {
   const userId = req.user.userId;
 
   try {
@@ -77,6 +77,6 @@ exports.getCourses = async (req, res) => {
 };
 
 
-exports.courseUpdate = async (req, res) => {};
+export const courseUpdate = async (req, res) => {};
 
-exports.deleteCourse = async (req, res) => {};
+export const deleteCourse = async (req, res) => {};
