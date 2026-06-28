@@ -1,0 +1,127 @@
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.analytics-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 24rem;
+    height: 11rem;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.analytics-main h2 {
+    padding-left: 1rem;
+    padding-bottom: 1.2rem;
+}
+
+.analytics-cont {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 1rem;
+}
+
+.reminder {
+    height: 10.5rem;
+    width: 14rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.reminder-p {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.remainder-type {
+    opacity: 0.6;
+}
+
+.dsa-coding {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(7, 53, 7);
+}
+
+.coding-time {
+    opacity: 0.5;
+    color: navy;
+}
+
+.center-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+    margin-right: 0.6rem;
+}
+
+.reminder-btn {
+    background-color: var(--main-theme);
+    border: 0rem;
+    border-radius: 1rem;
+    width: 13rem;
+    color: #fff;
+    height: 2.5rem;
+}
+
+.colab-container {
+    margin: 0.5rem 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    height: 12.2rem;
+    width: 23rem;
+}
+
+.team-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.1rem;
+}
+.member-pic {
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+}
+
+.member-profile {
+    display: flex;
+    margin: 0rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.name-email {
+    padding-left: 0.5rem;
+}
+
+.name-email p {
+    font-size: 0.7rem;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+.name {
+    color: navy;
+}
+
+.memeber-data {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+.project-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.3rem 0.8rem;
+}

@@ -1,71 +1,125 @@
-# Getting Started with Create React App
+# astratec
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Structure
 
-## Available Scripts
+### ./
 
-In the project directory, you can run:
+- **server-call.sh**: Functions: ping_server, start_server, client, server_call
 
-### `npm start`
+### new-app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **tailwind.config.js**: No exports detected
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### new-app\src\workspace/
 
-### `npm test`
+- **workspace.jsx**: Functions: handleEditorChange, runFile, handleTerminalKeyDown, resizeObserverErrSilencer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### new-app\src\views/
 
-### `npm run build`
+- **NoPage.jsx**: Functions: NoPage
+- **noActivity.jsx**: Functions: NoActivity
+- **Home.jsx**: Functions: Home
+- **Dashboard.jsx**: No exports detected
+- **Contact.jsx**: Functions: Contact
+- **App.jsx**: No exports detected
+- **Activity.jsx**: Functions: ActivityFilter, fetchActivities, handleRegister
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### new-app\src\util/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **styles.js**: No exports detected
+- **customeHook.js**: Functions: useJustPlay, player
+- **axios.js**: No exports detected
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### new-app\src/
 
-### `npm run eject`
+- **types.js**: No exports detected
+- **setupTests.js**: No exports detected
+- **reportWebVitals.js**: No exports detected
+- **index.js**: No exports detected
+- **App.test.js**: No exports detected
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### new-app\src\store/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **store.js**: No exports detected
+- **courseSlice.js**: No exports detected
+- **authSlice.js**: No exports detected
+- **adminSlice.js**: No exports detected
+- **activitySlice.js**: No exports detected
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### new-app\src\routes/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **routes.jsx**: Functions: AdminRoute, UserRoute
+- **redirect.jsx**: No exports detected
 
-## Learn More
+### new-app\src\Navbar/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Profile.jsx**: Functions: HandleDisplay, HandleLogout
+- **Navbar.jsx**: Functions: Navbar, handleScroll
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### new-app\src\components/
 
-### Code Splitting
+- **unAvailable.jsx**: Functions: UnAvailable
+- **section_1.jsx**: Functions: SmallSideBar, HandleUnlocked, handlesCheckboxChange
+- **secction_courses.jsx**: Functions: CourseItem, HandleClick
+- **ProtectedRoutes.jsx**: No exports detected
+- **Loader.js**: No exports detected
+- **layout.jsx**: No exports detected
+- **footerone.jsx**: No exports detected
+- **classroom.jsx**: Functions: ClassRoom, BackHome, HandleFetch, CodeEditor
+- **chat.jsx**: Functions: Chat
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### new-app\src\components\DashComponents/
 
-### Analyzing the Bundle Size
+- **side_component.jsx**: Functions: SidePanel, HandleLogout
+- **middleComponent.jsx**: Functions: UserProfile, Progress, MoveToCode, Analytics, ComingEvent, NestedMiddle
+- **Line.jsx**: Functions: Line
+- **Analz.jsx**: Functions: CircularProgress
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### new-app\src\components\adminDash/
 
-### Making a Progressive Web App
+- **users.jsx**: Functions: Users, handleDelete, handleNote, HandleChange, User, processName
+- **profile.jsx**: Functions: Profile, HandleUpdate, UpdateProfile, validateInput, HandleChange, HandleSubmit
+- **note.jsx**: Functions: Note, HandleSent
+- **middle-section.jsx**: Functions: CourseResource, HandleRemoveCourse
+- **layout.jsx**: Functions: UnAuthorized, AdminDashLayout
+- **adminDash.jsx**: Functions: SideBar, HandleLogout, AdminHome, DataCard
+- **admin-resos.jsx**: Functions: AdminResource
+- **admin-course.jsx**: Functions: AdminCourses
+- **admin-analys.jsx**: Functions: AdminAnalysis
+- **admin-activity.jsx**: Functions: AdminActivity
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### new-app\src\auth/
 
-### Advanced Configuration
+- **singUp.jsx**: Functions: SignUp, validateInputs, HandleSubmit
+- **login.jsx**: Functions: Login, handleSubmit
+- **forgotpass.jsx**: Functions: Forgotpass, HandleChange, HandleSubmit
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### backend/
 
-### Deployment
+- **server.js**: No exports detected
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### backend\routes/
 
-### `npm run build` fails to minify
+- **apiRoutes.js**: No exports detected
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# astec
+### backend\logger/
+
+- **sys_logs.js**: No exports detected
+- **server_log.js**: No exports detected
+- **logs.js**: Functions: addZero, handleLogs
+
+### backend\controllers\user_controller/
+
+- **user.js**: No exports detected
+- **courses.js**: No exports detected
+- **auth.js**: No exports detected
+- **admin.js**: No exports detected
+- **activities.js**: No exports detected
+
+### backend\middleware/
+
+- **auth.js**: Functions: verifyToken, authorizedRole
+
+### backend\model/
+
+- **usersDB.js**: No exports detected

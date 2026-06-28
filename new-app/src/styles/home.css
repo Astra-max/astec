@@ -1,0 +1,62 @@
+.home-cont {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4.1rem;
+    height: 34rem;
+    background-color: var(--main-color);
+}
+
+.home-display {
+    margin-top: 5rem;
+}
+
+.home-image {
+    display: flex;
+    margin-top: 5.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.hm-image {
+    width: 18rem;
+    height: 16rem;
+}
+
+.inbold {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+}
+.welcome-note {
+    width: 40rem;
+    font-size: 1rem;
+}
+
+.start-btn {
+    height: 2rem;
+    width: 6rem;
+    font-size: small;
+    background-color: black;
+    border-radius: 0.5rem;
+    border: 0rem;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.join-btn {
+    height: 2rem;
+    width: 7.5rem;
+    font-size: small;
+    background-color: black;
+    border-radius: 0.5rem;
+    border: 0rem;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.astec {
+    color: black;
+    font-size: 1.9rem;
+}

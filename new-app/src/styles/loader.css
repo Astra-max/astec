@@ -1,0 +1,15 @@
+.main-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50rem;
+}
+
+.progress-main {
+    height: 10rem;
+    width: inherit;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+}

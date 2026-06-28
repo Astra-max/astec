@@ -1,0 +1,97 @@
+.main-activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+    width: 100%;
+    margin-top: 7.5rem;
+    margin-bottom: 4rem;
+}
+
+table {
+    width: 70rem;
+}
+
+.activ-elem {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+thead {
+  margin-bottom: 10px;
+}
+
+table th, table td {
+  padding: 0.6rem;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0.2rem;
+}
+
+thead tr {
+background-color: var(--main-color);
+text-align: left;
+height: 2rem;
+}
+
+table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.mandatory {
+    color: orange;
+}
+
+.optional {
+    color: var(--main-theme);
+}
+
+.register {
+    background-color: var(--main-color);
+    border: 0rem;
+    color: var(--main-theme);
+    font-size: small;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.btn {
+    border: 0rem;
+    width: 9rem;
+    font-weight: 500;
+    height: 1.8rem;
+    border-radius: 0.2rem;   
+}
+
+.act-btn {
+    border: 0rem;
+    width: 10rem;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+
+.filter-by {
+    width: 70rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.venue {
+    height: 2rem;
+    width: 4rem;
+    border-radius: 0.5rem;
+}
+
+.urgency {
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.act-type {
+    height: 2rem;
+    border-radius: 0.5rem;
+}
