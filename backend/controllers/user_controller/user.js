@@ -12,7 +12,7 @@ exports.addUser = async (req, res) => {
           'INSERT INTO users (firstname, secondname, email, password) VALUES ($1,$2,$3,$4) RETURNING *',
           [firstName, secondName,emailAddress, passWord]
         );
-        res.status(201).json({ user: result.rows[0] });
+        res.status(201).json(result.rows[0]);
     } catch (error) {
         return res.status(500).json({serverError: 500})
     }
@@ -32,7 +32,7 @@ exports.getSingleUser = async (req, res) => {
     const userId = +req.params.id
     try {
         const singleUser = await pool.query('SELECT firstname,secondname,email FROM users WHERE id=$1',[userId])
-        if (singleUser.rows.length !== 0) return res.json({user: singleUser.rows[0]})
+        if (singleUser.rows.length !== 0) return res.json(singleUser.rows[0])
         return res.status(404).json({userNotFound: res.statusCode})
     } catch (error) {
         return res.status(500).json({serverError: 500})

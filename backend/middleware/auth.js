@@ -1,37 +1,47 @@
-const jwt = require('jsonwebtoken');
-const env = require('dotenv')
-env.config()
+const jwt = require("jsonwebtoken");
+const env = require("dotenv");
+env.config();
 
+/**
+ * Handles verify token
+ */
 function verifyToken(req, res, next) {
-    let authHeader = req.headers.Authorization || req.headers.authorization || ""
-    let parts = authHeader.split(" ")
-    if (parts.length !== 2 || parts[0] !== "Bearer") return res.status(403).json({forbidden: res.statusCode})
-    if (parts[0] === 'Bearer') {
-        const token = parts[1]
-        if (!token) {
-            return res.status(401).json({tokenErr: 'no token access provided'})
-        }
-    
-        try {
-            jwt.verify(token, process.env.JWT_SECRET,
-                (err, user) => {
-                    if (err) return res.status(403).json({message: 'Invalid token'})
-                    req.user = user
-                }
-            )
-            next()
-        } catch (err) {
-            return res.status(500).json({serverError: 500})
-        }
+  try {
+    // Get token from HttpOnly cookie
+    //const token = req.cookies.authToken;
+    const rawToken = req.headers.authorization;
+    if (!rawToken) return res.json({ invalid: "no access token" });
+    //if (!rawToken.startsWidth('Bearer')) return res.status(403).json({invalid: 'no access token'})
+    const token = rawToken.split("Bearer ")[1];
+
+    if (!token) {
+      return res.status(401).json({ tokenErr: "No token provided" });
     }
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) {
+        return res.status(403).json({ message: "Invalid or expired token" });
+      }
+
+      req.user = user; // attach decoded payload (e.g. userId, role)
+      next();
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ serverError: 500 });
+  }
 }
 
-const authorizeRole = (...allowedRoles) => {
-    return (req,res,next) => {
-        if (!allowedRoles.includes(req.user.role)) return res.status(403).
-        json({accessDenied: res.statusCodes})
-        next()
+/**
+ * Handles authorized role
+ */
+const authorizedRole = (...allowedRoles) => {
+  return (req, res, next) => {
+    if (!allowedRoles.includes(req.user.role)) {
+      return res.json({ accessDenied: "unauthorized access", status: 403 });
     }
-}
+    next();
+  };
+};
 
-module.exports = {verifyToken,  authorizeRole}
+module.exports = { verifyToken, authorizedRole };
