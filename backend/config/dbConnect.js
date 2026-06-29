@@ -1,9 +1,7 @@
-import  pg from "pg";
+import  { Pool } from "pg";
 import env from "dotenv";
 
 env.config()
-
-const { Pool } = pg;
 
 const pool = new Pool({
   user: process.env.DBUSER,         
